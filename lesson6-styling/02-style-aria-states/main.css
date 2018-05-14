@@ -30,21 +30,22 @@ main {
   width: 14px;
   height: 36px;
 }
-
-.disclosure-button .icon::after {
+/*when aria-expanded is false set the button to it's closed state*/
+.disclosure-button[aria-expanded="false"] .icon::after {
   content: '▶';
 }
 
-.disclosure-button.expanded .icon::after {
+.disclosure-button[aria-expanded="true"] .icon::after {
   content: '▼';
 }
 
-.disclosure-content.hidden {
+.disclosure-content[aria-hidden="true"] {
+  content: '&#x25BC';
   visibility: hidden;
   opacity: 0;
 }
 
-.disclosure-content {
+.disclosure-content[aria-hidden="false"] {
   visibility: visible;
   opacity: 1;
 }
