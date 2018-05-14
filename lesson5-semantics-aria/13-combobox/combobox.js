@@ -154,6 +154,7 @@
         },
 
         filter: function(str) {
+            //empty visibleItems array
             this.visibleItems = [];
             var foundItems = 0;
             for (var item of this.items) {
@@ -170,6 +171,13 @@
                 this.hide();
             } else {
                 // FIXME: ChromeVox reports the wrong list size and position
+                 for (var i = 0; i < this.visibleItems.length; i++) {
+                    var item = this.visibleItems[i];
+                    //iterate over the list item, then set aria-posinset to the item index + 1
+                    //aria-setsize to the number of visibleItems
+                    item.setAttribute('aria-posinset', i + 1);
+                    item.setAttribute('aria-setsize', this.visibleItems.length);
+                }
             }
         },
 
@@ -237,6 +245,8 @@
             newActive.classList.add('active');
 
             // FIXME: need to ensure focus stays on textbox, but report active list option
+            //designed to make focus appear to be somewhere other than the web page focus
+            this.textbox.setActiveDescendant(newActive);
         }
     };
 
