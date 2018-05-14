@@ -22,7 +22,6 @@
 
     this.el.addEventListener('keydown', this.handleKeyDown.bind(this));
     this.el.addEventListener('click', this.handleClick.bind(this));
-
     // Set ARIA role for the radio group.
     this.el.setAttribute('role', 'radiogroup');
 
