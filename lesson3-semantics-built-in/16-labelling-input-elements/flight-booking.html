@@ -126,9 +126,14 @@
                   <option value="2">Window seat</option>
                 </select>
               </div>
-
+              <!-- Wrap the input element in a label element -->
+              <!-- Or use the for attribute of the label -->
+              <!-- Add a class with a name accordingly to the form -->
               <div class="inline-control sign-up col-1">
-                <input type="checkbox" checked name="jLetter" id="jLetter"> Receive promotional offers?
+                <div class="promotional">
+                  <input type="checkbox" checked name="jLetter" id="jLetter">
+                  <label for="jLetter">Receive promotional offers?</label>
+                </div>
               </div>
 
               <div class="inline-control submit-form col-1">

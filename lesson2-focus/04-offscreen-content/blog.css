@@ -167,8 +167,9 @@ h6, .h6 {
 .blog-footer a {
   color: #00598f;
 }
-
+/*set the modal to display none for user accessibility
+this will opt it and all of its children out of the tab order*/
 .modal {
-  display: block;
+  display: none;
   left: 9999px;
 }

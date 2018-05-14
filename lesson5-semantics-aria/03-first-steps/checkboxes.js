@@ -32,18 +32,17 @@
       }
     }
   };
-
-  Checkbox.prototype.toggle = function() {
+  //This will also update the dom
+    Checkbox.prototype.toggle = function() {
     if (this.el.hasAttribute('checked')) {
       this.el.removeAttribute('checked');
-
-      // Hmm.
-
+      // set the attribute to checked attribute and aria-checked in sync.
+      this.el.setAttribute('aria-checked', 'false');
     } else {
       this.el.setAttribute('checked', '');
 
-      // Hmmmmm.
-
+      // set the attribute and aria-checked in sync.
+      this.el.setAttribute('aria-checked', 'true');
     }
   };
 
